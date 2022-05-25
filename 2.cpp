@@ -41,6 +41,8 @@ int main() {
 
 	}
 	calc(arr, size, rate);
+	delete [] arr;
+	arr = NULL;
 
 
 
