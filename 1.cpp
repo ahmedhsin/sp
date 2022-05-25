@@ -10,11 +10,10 @@ void display(int arr[3][4]){
 }
 void Transaction(int arr[3][4]){
     for(int i = 0;i<3;i++){
-        arr[i][3] = arr[i][1];
+        arr[i][3] = arr[i][1]-arr[i][2];
     }
-    for(int i = 0;i<3;i++){
-        arr[i][3] -= arr[i][2];
-    }
+        //5aletha  for loop wa7da 
+    
 
 }
 int main()
