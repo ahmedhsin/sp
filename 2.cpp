@@ -1,27 +1,50 @@
 #include <iostream>
+#include <string>
 using namespace std;
-struct emp{
-    int id;
-    string name;
-    double hours;
-    double overtime;
-    double overall;
-};
-void calc(emp arr[],int n,float rate){
-    for(int i = 0;i<n;i++){
-        arr[i].overall = arr[i].hours * rate + 1.5 * arr[i].overtime * rate;
-        cout<<arr[i].id<<" "<<arr[i].name<<" "<<arr[i].overall<<endl;
-    }
-}
-int main()
-{
-    emp arr[1000];
-    int n;cin>>n;
-    float rate;cin>>rate;
-    for(int i = 0;i<n;i++){
-        cin>>arr[i].id>>arr[i].name>>arr[i].hours>>arr[i].overtime;
-    }
-    calc(arr,n,rate);
+struct emp {
 
-    return 0;
+	int id;
+	string name;
+	double hours;
+	double overtime;
+	double overall;
+
+
+};
+void calc(emp* arr, int size, float rate) {
+	cout << "ID" << "      " << "NAME" << " " << " overall" << endl;
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i].overall = arr[i].hours * rate + 1.5 * arr[i].overtime * rate;
+		cout << arr[i].id << " " << arr[i].name << " " << arr[i].overall << endl;
+	}
+
+
+}
+
+int main() {
+    
+	
+	cout << "enter the number of employees" << endl;
+	int size;
+	cin >> size;
+	emp* arr = new emp[size];
+
+	float rate = 25.5;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		cin >> arr[i].id;
+		cin >> arr[i].name;
+		cin >> arr[i].hours;
+		cin >> arr[i].overtime;
+
+	}
+	calc(arr, size, rate);
+
+
+
+	return 0;
+	
+
 }
